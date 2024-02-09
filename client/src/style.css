@@ -1,0 +1,10 @@
+.homeimg {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
