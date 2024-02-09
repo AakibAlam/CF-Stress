@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const path = require("path");
 const authRoute = require("./Routes/AuthRoute.jsx");
 const cookieParser = require("cookie-parser");
 const app = express();
@@ -29,6 +30,11 @@ app.use(
     credentials: true,
   })
 );
+
+app.use(express.static("../client/dist"));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
+});
 
 app.use(express.json());
 app.use(cookieParser());
