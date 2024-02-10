@@ -10,5 +10,5 @@ router.post("/contact", userVerification, (req, res) => {
   res.status(200).send("You can access the contact route!");
 });
 router.post("/test", userVerification, StressTest);
-router.get("/", userVerification, UserCredentials);
+router.post("/", userVerification, UserCredentials);
 module.exports = router;

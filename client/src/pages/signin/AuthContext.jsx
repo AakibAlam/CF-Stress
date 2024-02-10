@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
       if (storedToken !== "undefined") {
         console.log("inauthcontext successful\n");
         try {
-          const response = await axios.get(baseUrl + "/", {
+          const response = await axios.post(baseUrl + "/", {
             withCredentials: true,
           });
           console.log("Response: ", response.data);
