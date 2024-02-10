@@ -6,11 +6,15 @@ const authRoute = require("./Routes/AuthRoute.jsx");
 const cookieParser = require("cookie-parser");
 const app = express();
 require("dotenv").config();
-const { PORT, MONGO_URL } = process.env;
+const MONGO_URL = process.env.MONGO_URL;
+const PORT = process.env.PORT || 5000;
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(MONGO_URL, {});
+    const conn = await mongoose.connect(MONGO_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
     console.log(`MongoDB Connected!\n ${conn}`);
   } catch (error) {
     console.log(`Error: ${error.message}`);
