@@ -25,11 +25,7 @@ app.listen(PORT, () => {
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "http://localhost:3000",
-      "https://cfstress.azurewebsites.net",
-    ],
+    origin: ["http://localhost:5173", "https://cfstress.azurewebsites.net"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
