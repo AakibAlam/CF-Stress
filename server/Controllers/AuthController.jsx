@@ -30,15 +30,14 @@ module.exports.Signin = async (req, res, next) => {
     if (!auth) {
       return res.json({ message: "Wrong Password" });
     }
-    console.log(user);
     const token = createSecretToken(user._id);
     res.cookie("token", token, {
       withCredentials: true,
       httpOnly: false,
     });
-    return res
-      .status(201)
-      .json({ message: "Sign In Successful!", success: true, user: user });
+    // res
+    //   .status(201)
+    //   .json({ message: "Sign In Successful!", success: true, user: user });
     next();
   } catch (error) {
     console.log(`Error: ${error.message}`);

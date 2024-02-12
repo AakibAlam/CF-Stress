@@ -10,17 +10,12 @@ const {
 // const problemId = "A";
 // const submissionId = "241764488";
 
-// async function processSubmission() {
 async function processSubmission(contestId, problemId, submissionId) {
   const generator_path = path.resolve(
     "Generators",
     contestId + problemId + ".jsx"
   );
   const submission_path = path.resolve("Submissions");
-  //   console.log(absolute_path);
-  //   console.log(contestId, problemId, submissionId);
-  //   console.log("Generator path:", generator_path);
-  //   console.log("Generator file exists:", fs.existsSync(generator_path));
 
   if (!fs.existsSync(generator_path)) {
     console.log("No generator for this question :(\n");
@@ -28,6 +23,7 @@ async function processSubmission(contestId, problemId, submissionId) {
   }
   try {
     const result = await getCodeInFile(contestId, submissionId);
+    // console.log(result.code, result.language);
     const fileExtension = getFileExtension(result.language);
     if (fileExtension) {
       fs.writeFileSync(
@@ -53,7 +49,7 @@ async function processSubmission(contestId, problemId, submissionId) {
       console.log(result.language + " Language is not supported :(\n");
     }
   } catch (error) {
-    console.log("Error: ", error.message);
+    console.log("Error: ", error);
   }
 }
 
@@ -110,14 +106,6 @@ function getFileExtension(language) {
 
   return null;
 }
-
-// processSubmission()
-//   .then((res) => {
-//     console.log("Test Case: ", res);
-//   })
-//   .catch((error) => {
-//     console.log("Error: ", error.message);
-//   });
 
 module.exports = {
   FindTest: processSubmission,

@@ -6,11 +6,14 @@ module.exports.userVerification = async (req, res, next) => {
   const token = req.cookies.token;
   if (token === undefined) {
     console.log("Not Signed In\n");
-    return res.json({ status: false });
+    return res.json({ status: false, error: "Not Signed IN\n" });
   }
   jwt.verify(token, process.env.TOKEN_KEY, async (err, data) => {
     if (err) {
-      return res.json({ status: false });
+      return res.json({
+        status: false,
+        error: "Error in verification with token\n",
+      });
     }
     try {
       const user = await User.findById(data.id);
@@ -18,8 +21,6 @@ module.exports.userVerification = async (req, res, next) => {
         console.error("User not found in the database");
         return res.status(401).json({ status: false, error: "User not found" });
       }
-      const { name, email } = user;
-      console.log("User verified:", name, email);
       next();
     } catch (error) {
       console.error("Error while querying the database:", error);

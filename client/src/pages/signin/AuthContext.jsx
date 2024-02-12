@@ -13,11 +13,10 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkToken = async () => {
       const storedToken = cookies.token;
-      console.log("stored token: ", storedToken);
       if (storedToken !== "undefined") {
-        console.log("inauthcontext successful\n");
         try {
-          const response = await axios.post(baseUrl + "/", {
+          const response = await axios(baseUrl, {
+            method: "post",
             withCredentials: true,
           });
           console.log("Response: ", response.data);

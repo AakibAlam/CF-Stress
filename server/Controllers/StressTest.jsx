@@ -1,11 +1,9 @@
 const { FindTest } = require("../Utils/TestMain.jsx");
 
-module.exports.StressTest = async (req, res, next) => {
+module.exports.StressTest = async (req, res) => {
   try {
     const { contestId, problemId, submissionId } = req.body;
-    // console.log(contestId, problemId, submissionId);
     testCase = await FindTest(contestId, problemId, submissionId);
-    console.log(testCase);
     return res.status(200).json({ status: true, testCase: testCase });
   } catch (error) {
     console.log(`Error: ${error.message}`);

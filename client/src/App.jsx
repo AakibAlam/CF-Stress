@@ -7,7 +7,7 @@ import Signin from "./pages/signin/signin";
 import Signup from "./pages/signin/signup";
 import Navbar from "./components/navbar/nav";
 import backgroundImg from "/cf-stress.jpg";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import PrivateRoutes from "./pages/signin/PrivateRoute";
 
 function App() {

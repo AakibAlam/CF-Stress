@@ -66,10 +66,9 @@ async function getCodeInFile(contestId, submissionId) {
         resolve(cells.eq(3).text().trim());
       });
     });
-    // console.log(language);
     return { code, language };
   } catch (error) {
-    console.log("Error: ", error.message);
+    console.log("Error: ", error);
   }
 }
 
