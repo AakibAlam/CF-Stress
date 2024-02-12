@@ -35,10 +35,10 @@ module.exports.Signin = async (req, res, next) => {
       withCredentials: true,
       httpOnly: false,
     });
-    // res
-    //   .status(201)
-    //   .json({ message: "Sign In Successful!", success: true, user: user });
-    next();
+    res
+      .status(201)
+      .json({ message: "Sign In Successful!", success: true, user: user });
+    // next();
   } catch (error) {
     console.log(`Error: ${error.message}`);
   }
