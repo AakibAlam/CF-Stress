@@ -36,7 +36,9 @@ function ContactForm() {
       VITE_MY_EMAIL,
       VITE_YOUR_SERVICE_ID,
       VITE_YOUR_TEMPLATE_ID,
-      VITE_YOUR_USER_ID
+      VITE_YOUR_USER_ID,
+      user.email,
+      user.name
     );
 
     const templateParams = {
