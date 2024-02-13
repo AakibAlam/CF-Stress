@@ -32,6 +32,12 @@ function ContactForm() {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
+    console.log(
+      VITE_MY_EMAIL,
+      VITE_YOUR_SERVICE_ID,
+      VITE_YOUR_TEMPLATE_ID,
+      VITE_YOUR_USER_ID
+    );
 
     const templateParams = {
       from_name: user.email,
