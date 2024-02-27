@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
 import { useAuth } from "../../pages/signin/AuthContext";
+require("dotenv").config();
 
 const VITE_MY_EMAIL = import.meta.env.VITE_MY_EMAIL || process.env.MY_EMAIL;
 const VITE_YOUR_SERVICE_ID =
