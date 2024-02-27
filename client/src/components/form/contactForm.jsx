@@ -5,10 +5,14 @@ import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
 import { useAuth } from "../../pages/signin/AuthContext";
 
-const VITE_MY_EMAIL = import.meta.env.VITE_MY_EMAIL;
-const VITE_YOUR_SERVICE_ID = import.meta.env.VITE_YOUR_SERVICE_ID;
-const VITE_YOUR_TEMPLATE_ID = import.meta.env.VITE_YOUR_TEMPLATE_ID;
-const VITE_YOUR_USER_ID = import.meta.env.VITE_YOUR_USER_ID;
+const VITE_MY_EMAIL =
+  import.meta.env.VITE_MY_EMAIL || process.env.VITE_MY_EMAIL;
+const VITE_YOUR_SERVICE_ID =
+  import.meta.env.VITE_YOUR_SERVICE_ID || process.env.VITE_YOUR_SERVICE_ID;
+const VITE_YOUR_TEMPLATE_ID =
+  import.meta.env.VITE_YOUR_TEMPLATE_ID || process.env.VITE_YOUR_TEMPLATE_ID;
+const VITE_YOUR_USER_ID =
+  import.meta.env.VITE_YOUR_USER_ID || process.env.VITE_YOUR_USER_ID;
 
 function ContactForm() {
   const { user } = useAuth();

@@ -2,7 +2,6 @@ import Container from "react-bootstrap/Container";
 import { TypeAnimation } from "react-type-animation";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { useAuth } from "../signin/AuthContext";
 
 function Home() {
   return (
