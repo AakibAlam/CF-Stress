@@ -23,7 +23,7 @@ function Home() {
 
               <TypeAnimation
                 sequence={[
-                  `CF Stress is a tool designed Codeforces, one of the top competitive programming websites globally. This tool is utilized to identify the smallest test case that could potentially result in the failure of any non-interactive problem submission on Codeforces.`,
+                  `CF Stress is a tool designed for Codeforces, one of the top competitive programming websites globally. This tool is utilized to identify the smallest test case that could potentially result in the failure of any non-interactive problem submission on Codeforces.`,
                   1000,
                   "",
                 ]}
